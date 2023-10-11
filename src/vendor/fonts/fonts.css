@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    url('Geologica-Light300.woff2') format('woff2'),
+    url('Geologica-Light300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('Geologica-Regular400.woff2') format('woff2'),
+    url('Geologica-Regular400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('Geologica-Medium500.woff2') format('woff2'),
+    url('Geologica-Medium500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url('Geologica-SemiBold600.woff2') format('woff2'),
+    url('Geologica-SemiBold 600.woff') format('woff');
+}
