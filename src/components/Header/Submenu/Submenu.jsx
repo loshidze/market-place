@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import * as data from '../../../utils/tempcards.json';
-import * as info from '../../../utils/infoUser.json';
+import data from '../../../utils/tempcards.json';
+import info from '../../../utils/infoUser.json';
 
 import styles from './Submenu.module.scss';
 

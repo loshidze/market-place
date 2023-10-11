@@ -5,7 +5,7 @@ import {
   NUMBER_OF_DISPLAYED_BOTS_1920,
   NUMBER_OF_ADDED_DISPLAYED_BOTS_1920,
 } from '../../utils/constants';
-import * as data from '../../utils/tempcards.json';
+import data from '../../utils/tempcards.json';
 
 const BotsList = ({ addProductToCart }) => {
   const { bots } = data;

@@ -1,8 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, HashRouter } from 'react-router-dom';
 
 import styles from './App.module.scss';
-import * as cartData from '../../utils/products.json';
+import cartData from '../../utils/products.json';
 import CurrentUserContext from '../../context/CurrentUserContext';
 
 import Header from '../Header/Header';
@@ -89,111 +89,113 @@ const App = () => {
   return (
     <CurrentUserContext.Provider value={contextValue}>
       <div className={styles.page}>
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <>
-                <Header
-                  isLoggedIn={isLoggedIn}
-                  isLogOut={handleLogOut}
-                  cartProducts={cartProducts}
-                />
-                <Main addProductToCart={addProductToCart} />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path='/cart'
-            element={
-              <>
-                <Header
-                  isLoggedIn={isLoggedIn}
-                  isLogOut={handleLogOut}
-                  cartProducts={cartProducts}
-                />
-                <Cart
-                  isLoggedIn={isLoggedIn}
-                  cartProducts={cartProducts}
-                  deleteCartProduct={deleteCartProduct}
-                  increaseProductCount={increaseProductCount}
-                  decreaseProductCount={decreaseProductCount}
-                />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path='/botdetails/:botId'
-            element={
-              <>
-                <Header
-                  isLoggedIn={isLoggedIn}
-                  isLogOut={handleLogOut}
-                  cartProducts={cartProducts}
-                />
-                <BotDetails />
-                <Footer />
-              </>
-            }
-          />
+        <HashRouter basename='/'>
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <>
+                  <Header
+                    isLoggedIn={isLoggedIn}
+                    isLogOut={handleLogOut}
+                    cartProducts={cartProducts}
+                  />
+                  <Main addProductToCart={addProductToCart} />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path='/cart'
+              element={
+                <>
+                  <Header
+                    isLoggedIn={isLoggedIn}
+                    isLogOut={handleLogOut}
+                    cartProducts={cartProducts}
+                  />
+                  <Cart
+                    isLoggedIn={isLoggedIn}
+                    cartProducts={cartProducts}
+                    deleteCartProduct={deleteCartProduct}
+                    increaseProductCount={increaseProductCount}
+                    decreaseProductCount={decreaseProductCount}
+                  />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path='/botdetails/:botId'
+              element={
+                <>
+                  <Header
+                    isLoggedIn={isLoggedIn}
+                    isLogOut={handleLogOut}
+                    cartProducts={cartProducts}
+                  />
+                  <BotDetails />
+                  <Footer />
+                </>
+              }
+            />
 
-          <Route
-            path='/login'
-            element={
-              <>
-                <Header cartProducts={cartProducts} />
-                <Login />
-                <Footer />
-              </>
-            }
-          />
+            <Route
+              path='/login'
+              element={
+                <>
+                  <Header cartProducts={cartProducts} />
+                  <Login />
+                  <Footer />
+                </>
+              }
+            />
 
-          <Route
-            path='/signup'
-            element={
-              <>
-                <Header cartProducts={cartProducts} />
-                <Register />
-                <Footer />
-              </>
-            }
-          />
+            <Route
+              path='/signup'
+              element={
+                <>
+                  <Header cartProducts={cartProducts} />
+                  <Register />
+                  <Footer />
+                </>
+              }
+            />
 
-          <Route
-            path='/reset-password'
-            element={
-              <>
-                <Header cartProducts={cartProducts} />
-                <ResetPassword />
-                <Footer />
-              </>
-            }
-          />
+            <Route
+              path='/reset-password'
+              element={
+                <>
+                  <Header cartProducts={cartProducts} />
+                  <ResetPassword />
+                  <Footer />
+                </>
+              }
+            />
 
-          <Route
-            path='/OTP-password'
-            element={
-              <>
-                <Header cartProducts={cartProducts} />
-                <OTPPassword />
-                <Footer />
-              </>
-            }
-          />
+            <Route
+              path='/OTP-password'
+              element={
+                <>
+                  <Header cartProducts={cartProducts} />
+                  <OTPPassword />
+                  <Footer />
+                </>
+              }
+            />
 
-          <Route
-            path='/change-password'
-            element={
-              <>
-                <Header cartProducts={cartProducts} />
-                <ChangePassword />
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
+            <Route
+              path='/change-password'
+              element={
+                <>
+                  <Header cartProducts={cartProducts} />
+                  <ChangePassword />
+                  <Footer />
+                </>
+              }
+            />
+          </Routes>
+        </HashRouter>
       </div>
     </CurrentUserContext.Provider>
   );
